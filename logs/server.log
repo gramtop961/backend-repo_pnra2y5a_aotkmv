@@ -1,0 +1,31 @@
+INFO:     Will watch for changes in these directories: ['/home/workspace']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [152] using StatReload
+INFO:     Started server process [154]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     172.20.0.1:47022 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:52268 - "GET /api/solutions HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52286 - "GET /api/solutions?featured=true HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52268 - "GET /api/solutions HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52302 - "GET /api/offices HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52302 - "GET /api/offices HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52276 - "GET /api/stories HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52276 - "GET /api/stories HTTP/1.1" 200 OK
+INFO:     172.20.0.1:52286 - "GET /api/solutions?featured=true HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59276 - "GET /api/offices HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59244 - "GET /api/solutions HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59260 - "GET /api/solutions?featured=true HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59286 - "GET /api/stories HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59276 - "GET /api/offices HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59244 - "GET /api/solutions HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59260 - "GET /api/solutions?featured=true HTTP/1.1" 200 OK
+INFO:     172.20.0.1:59286 - "GET /api/stories HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60132 - "GET /api/solutions?featured=true HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60096 - "GET /api/solutions HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60110 - "GET /api/stories HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60116 - "GET /api/offices HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60096 - "GET /api/solutions HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60132 - "GET /api/solutions?featured=true HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60110 - "GET /api/stories HTTP/1.1" 200 OK
+INFO:     172.20.0.1:60116 - "GET /api/offices HTTP/1.1" 200 OK

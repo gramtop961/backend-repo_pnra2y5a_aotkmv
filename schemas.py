@@ -11,10 +11,10 @@ Model name is converted to lowercase for the collection name:
 - BlogPost -> "blogs" collection
 """
 
-from pydantic import BaseModel, Field
-from typing import Optional
+from pydantic import BaseModel, Field, EmailStr
+from typing import Optional, List
 
-# Example schemas (replace with your own):
+# Existing example schemas (kept for reference)
 
 class User(BaseModel):
     """
@@ -22,7 +22,7 @@ class User(BaseModel):
     Collection name: "user" (lowercase of class name)
     """
     name: str = Field(..., description="Full name")
-    email: str = Field(..., description="Email address")
+    email: EmailStr = Field(..., description="Email address")
     address: str = Field(..., description="Address")
     age: Optional[int] = Field(None, ge=0, le=120, description="Age in years")
     is_active: bool = Field(True, description="Whether user is active")
@@ -38,11 +38,51 @@ class Product(BaseModel):
     category: str = Field(..., description="Product category")
     in_stock: bool = Field(True, description="Whether product is in stock")
 
-# Add your own schemas here:
-# --------------------------------------------------
+# Clean energy specific schemas used by the site
 
-# Note: The Flames database viewer will automatically:
-# 1. Read these schemas from GET /schema endpoint
-# 2. Use them for document validation when creating/editing
-# 3. Handle all database operations (CRUD) directly
-# 4. You don't need to create any database endpoints!
+class EnergyProduct(BaseModel):
+    """
+    Clean energy product/service
+    Collection name: "energyproduct"
+    """
+    name: str = Field(..., description="Product or service name")
+    sector: str = Field(..., description="Sector: solar, wind, storage, electrification, hydrogen")
+    summary: str = Field(..., description="Short summary of benefits")
+    specs: Optional[List[str]] = Field(default=None, description="Key specifications list")
+    image: Optional[str] = Field(default=None, description="Image URL")
+    featured: bool = Field(default=False, description="Show prominently in portfolio")
+
+class ImpactStory(BaseModel):
+    """
+    Case study / news item
+    Collection name: "impactstory"
+    """
+    title: str
+    location: Optional[str] = None
+    sector: Optional[str] = None
+    summary: str
+    media_url: Optional[str] = None
+    partner: Optional[str] = None
+
+class Office(BaseModel):
+    """
+    Office locations for global reach
+    Collection name: "office"
+    """
+    region: str
+    city: str
+    address: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[EmailStr] = None
+
+class Inquiry(BaseModel):
+    """
+    Contact and inquiry submissions
+    Collection name: "inquiry"
+    """
+    name: str
+    email: EmailStr
+    company: Optional[str] = None
+    topic: str = Field(..., description="General Inquiry, Partnerships, Careers, Support")
+    message: str
+    consent: bool = Field(default=False, description="GDPR consent for storing contact info")
